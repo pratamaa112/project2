@@ -1,0 +1,947 @@
+:root {
+    --hover: #4f4f4f;
+    --bg: #000000;
+    --text: #ffffff;
+    --blue: #060ddc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    background-color: #000000;
+    background-size: cover;
+    color: var(--text);
+    /* min-height: 7000px; */
+}
+
+/* navbar */
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 6%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--bg);
+    z-index: 100;
+    border-bottom:2px solid #060ddc;
+}
+
+.wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
+.wrapper-title {
+    font-weight: 700;
+    font-size: 2.2rem;
+    font-family: Roboto sans-serif;
+}
+
+.navbar {
+    position: relative;
+}
+
+.navbar-extra {
+    position: absolute;
+    right: 0;
+}
+
+.navbar > a {
+    color: #fff;
+    font-size: 1.3rem;
+    display: inline-block;
+    margin: 0 1.5rem 0;
+}
+
+.navbar-extra > a {
+    color: #fff;
+    font-size: 2rem;
+    display: inline-block;
+}
+
+.navbar > a:hover,
+.navbar-extra > a:hover {
+    color: var(--hover);
+    transition: all 0.4s ease-in-out;
+}
+
+.navbar > a::after {
+    content: '';
+    display: block;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--hover);
+    transform: scaleX(0);
+}
+
+.navbar > a:hover::after {
+    transform: scaleX(0.5);
+    transition: all 0.4s ease-in-out;
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+/* hero section */
+
+.hero{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-image: url(bg-homepage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+ }
+
+ .hero::before {  /*efek lapisan gelap BG*/
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Warna transparan (RGBA) */
+    opacity: 0.7; /* Tingkat transparansi */
+    z-index: 0; /* Menempatkan lapisan di atas gambar */
+}
+
+.hero-home {
+    display: flex;
+    position: relative;
+    margin-top: 3rem;
+}
+
+ .hero-picture,
+ .hero-title {
+    flex: 1;
+ }
+
+ .hero-picture {
+    align-items: center;
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
+    padding-bottom: 3rem;
+ }
+
+ .hero-picture > h2 {
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 1.7rem;
+    margin-top: 2rem;
+    color: var(--text);
+    animation: hero-picture 2s linear infinite alternate;
+ }
+
+ .hero-title {
+    margin: 2rem;
+    padding: 2.5rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 4rem;
+    border-bottom-left-radius: 4rem;
+    box-shadow: 0px 0px 5px #fff,
+                0px 0px 10px #4f4f4f,
+                0px 0px 15px #676666,
+                0px 0px 20px #676666;
+ }
+
+ .logo-home {
+    width: 20rem;
+    border-radius: 45%;
+    box-shadow:  0px 0px 5px #fff,
+                 0px 0px 10px #fff,
+                 0px 0px 15px #060ddc;
+ }
+
+ .hero-title > h1 {
+
+    font-weight: 700;
+    font-size: 2rem;
+    color: rgb(13, 15, 104);
+    margin-bottom: 1rem;
+    text-shadow:    0px 0px 5px #fff,
+                    0px 0px 10px #fff,
+                    0px 0px 15px #060ddc;
+ }
+
+ .hero-title > p {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+ }
+
+ .cta-home {
+    padding: 0.5rem 6rem;
+    background-color: rgb(13, 15, 104);
+    font-size: 1.2rem;
+    font-family: Roboto;
+    color: #ffffff;
+    border-radius: 2rem;
+    margin-left: 2rem;
+ }
+
+ .cta-home:hover {
+    background: #000000;
+    box-shadow: 0px 0px 5px #fff,
+                0px 0px 10px #fff,
+                0px 0px 15px #060ddc;
+    text-shadow: 0px 0px 3px #fff;
+    transition: all 0.4s ease-in-out;
+ }
+
+ /* row section */
+ .tentang-kami,
+ .service,
+ .contact {
+    padding: 7rem 7% 1.4rem;
+ }
+
+ .tentang-kami > h2,
+ .about-me2 > h3,
+ .contact > h2 {
+    color: rgb(13, 15, 104);
+    text-align: center;
+    font-size: 2rem;
+    text-shadow: 0px 0px 5px #fff,
+                 0px 0px 10px #fff,
+                 0px 0px 10px #060ddc;
+    
+ }
+
+ .about {
+    margin-top: 2rem;
+    display: flex;
+ }
+
+ .about-2 {
+    margin-top: 3rem;
+    display: flex;
+ }
+
+ .about-img1 {
+    margin: 1rem;
+    padding: 1rem;
+    width: 25rem;
+    border-radius: 5rem;
+    box-shadow:  0px 0px 5px #fff,
+                 0px 0px 10px #fff,
+                 0px 0px 15px #060ddc;
+ }
+
+ .about-img2 {
+    margin: 1rem;
+    padding: 1rem;
+    width: 29rem;
+    border-radius: 5rem;
+    box-shadow:  0px 0px 5px #fff,
+                 0px 0px 10px #fff,
+                 0px 0px 15px #060ddc;
+ }
+
+ .about-me {
+    padding-left: 2rem;
+    padding-right: 2rem;
+ }
+
+ .about-me > h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+ }
+
+ .about-me > h3 > span {
+    font-weight: 700;
+ }
+
+ .about-me > p,
+ .about-me2 > p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+ }
+
+ .about-me > ul {
+    margin-right: 2rem;
+    margin-left: 2rem;
+ }
+
+ .about-me > ul > li {
+    font-size: 1rem;
+    font-weight: 300;
+ }
+
+ .about-me > ul > li > span {
+    font-weight: 700;
+ }
+
+ .about-me2 {
+    padding: 1rem;
+ }
+
+ .about-me2 > ul {
+    margin: 1rem;
+ }
+
+ .about-me2 > ul > li  {
+    font-size: 1.2rem;
+    font-weight: 500;
+ }
+
+ .about-me2 > p {
+    font-size: 1.2rem;
+ }
+
+ .about-me2 > p > span {
+    font-weight: 700;
+ }
+
+ .cta-about {
+    color: #060ddc;
+    animation: blink 2s infinite;
+ }
+
+ .brand-films {
+    margin-top: 3rem;
+    display: flex;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    justify-content: space-between;
+ }
+
+ .w-3M,
+ .Lunmar,
+ .Nexgard,
+ .Solar-Gard,
+ .V-Kool {
+    width: 7rem;
+ }
+
+
+ /* product */
+
+ .service {
+    text-align: center;
+    align-items: center;
+ }
+
+ .service > h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(13, 15, 104);
+    text-shadow: 0px 0px 5px #fff,
+                 0px 0px 10px #fff,
+                 0px 0px 10px #060ddc;
+ }
+
+ .service-image1 {
+    margin-top: 2rem;
+    position:relative;
+    border-radius: 2rem;
+ }
+
+ .product-knowledge1 > h3,
+ .product-knowledge2 > h3,
+ .product-knowledge3 > h3,
+ .product-knowledge4 > h3,
+ .product-knowledge5 > h3,
+ .product-knowledge6 > h3 {
+    text-align: left;
+    color: rgb(13, 15, 104);
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0px 0px 5px #fff,
+                 0px 0px 10px #fff,
+                 0px 0px 10px #060ddc;
+ }
+
+ .product-knowledge2 > h3 >span,
+ .product-knowledge6 > h3 > span {
+    color: rgb(13, 15, 104);
+    text-shadow: 0px 0px 5px #fff,
+                 0px 0px 10px #fff,
+                 0px 0px 10px #060ddc;
+                 animation: Best-Seller 0.5s linear infinite alternate;
+ }
+
+ .product p {
+    text-align: left;
+    margin-top: 0.7rem;
+    font-weight: 300;   
+}
+
+.product ul {
+    text-align: left;
+    font-weight: 300;
+    margin-top: 0.7rem;
+    margin-left: 2rem;
+}
+
+.product ul li span {
+    font-weight: 700;
+}
+
+/* contact */
+.contact > p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.contact-row {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-row > iframe {
+    width: 10rem;
+}
+
+.map{
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+
+.form {
+    align-items: center;
+    text-align: center;
+    flex: 1 1 45rem;
+    padding: 1rem 1rem;
+    margin-left: 2rem;
+    border: 2px solid #fff;
+    box-shadow: 0px 0px 5px #fff,
+                0px 0px 10px #fff,
+                0px 0px 10px #060ddc;
+    border-radius: 1rem;
+}
+
+.input-group{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    background-color: var(--bg);
+    border: 1px solid #fff;
+    padding-left: 2rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+  
+  .input-group input{
+    width: 100%;
+    font-size: 1rem;
+    background: none;
+    padding-left: 1rem;
+    color: #fff;
+}
+
+  .btn {
+    position: relative;
+    margin-top: 1rem;
+    display: inline;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: var(--blue);
+    cursor: pointer;
+    border-radius: 3rem;
+    transition: all 0.3s ease-in-out;
+}
+
+  .btn:hover {
+    width: 40%;
+    background-color: #000000;
+    box-shadow: 0px 0px 5px #fff,
+                0px 0px 10px #fff,
+                0px 0px 10px #060ddc;
+    
+}
+
+footer {
+    padding: 1rem 2rem;
+    text-align: center;
+    background-color: var(--blue);
+}
+
+.socials > a {
+    color: #fff;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.links > a {
+    color: #fff;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
+.credit {
+    font-size: 1rem;
+}
+
+.credit-a {
+    outline-color: #fff;
+    color: #000000;
+    font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
+/* animation */
+
+@keyframes blink {
+    0% {color:#060ddc}
+    50% {color: red;}
+    100% {color: #060ddc;}
+}
+
+@keyframes hero-picture {
+    0% {color:#aeaeae}
+    100% {color: rgb(13, 15, 104);;
+        text-shadow:  0px 0px 5px #fff,
+        0px 0px 10px #fff,
+        0px 0px 15px #060ddc;}
+}
+
+@keyframes Best-Seller {
+    0% {color: rgb(13, 15, 104);
+        text-shadow: 0px 0px 5px #fff,
+                     0px 0px 10px #060ddc;}
+    100% {color: red;
+        text-shadow: 0px 0px 5px #fff,
+                     0px 0px 10px red;}
+}
+
+
+
+
+
+
+/* Media Queries */ 
+
+/* PC */
+ @media (min-width: 992px){
+    html{font-size: 90%;}
+}
+
+/* tABLET */
+@media (min-width: 450px) and ( max-width: 992px){
+    html{font-size: 62.5%}
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .wrapper-title {
+        font-size: 4rem;
+    }
+
+    .navbar {
+        position: absolute;
+        /* top: 100%; --- mengatur navbar dibawah navigation */
+        top: -500%; /*untuk mengatur navbar keatas menghilang*/
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 45vh;;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        transition: 0.4s;
+        z-index: -2;
+    }
+
+    .navbar.active {
+        top: 100%;
+    }
+
+    .navbar-extra {
+        position: absolute;
+        right: 8%;
+        bottom: 2rem;
+    }
+    .navbar > a {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 1.7rem;
+        padding-top: 1rem;
+        padding-bottom: 1.5rem;
+
+    }
+
+    .navbar > a::after {
+        content: '';
+        display: block;
+        padding-bottom: 2px;
+        border-bottom: 1px solid var(--hover);
+        transform: scaleX(0);
+    }
+
+    .navbar > a:hover::after {
+        transform: scaleX(0.3);
+    }
+
+    .logo-home {
+        width: 60%;
+    }
+
+    .hero-home {
+        padding-top: 3rem;
+    }
+
+    .hero-picture > h2 {
+        font-size: 2.8rem;
+    }
+
+    .hero-title {
+        margin-left: 3rem;
+        margin-right: 3rem;
+        padding: 1.5rem;
+        padding-bottom: 5rem;
+    }
+
+    .hero-title > h1 {
+        font-size: 3rem;
+    }
+
+    .hero-title > p {
+        font-size: 1.6rem;
+        margin-bottom: 5rem;
+    }
+
+    .cta-home {
+        font-size: 2rem;
+        padding: 1rem 4rem;
+    }
+
+    /* row section */
+
+     /* Row section */
+
+     .tentang-kami > h2 {
+        font-size: 2.8rem;
+    }
+
+    .about,
+    .about-2 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .about-me > h3 {
+        font-size: 1.6rem;
+        margin-top: 2rem;
+    }
+    
+    .about-me > h3 > span {
+        color: #292fd1;
+    }
+
+    .about-me > ul {
+        text-align: left;
+    }
+
+    .about-me > p {
+        font-size: 1.2rem;
+    }
+
+    .about-me > ul > li {
+        font-size: 1.2rem;
+    }
+
+    .brand-films {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .brand-films > img {
+        margin: 1rem;
+    }
+
+    .about-img2 {
+        display: none;
+    }
+
+    .about-me2 > h3,
+    .service > h2 {
+        margin-bottom: 2rem;
+        font-size: 2.8rem;
+    }
+
+    .about-me2 > ul {
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+
+    .about-me2 > ul > li {
+        font-size: 1.2rem;
+    }
+
+    .about-me2 > p {
+        font-size: 1.2rem;
+    }
+
+    /* sevice product */
+    .service-image1 {
+        width: 95%;
+    }
+
+    .product-knowledge1 > h3 {
+        margin-top: 2rem;
+    }
+
+    .product p {
+        font-size: 1.2rem;
+    }
+
+    .product ul li {
+        font-size: 1.2rem;
+    }
+
+    .product ul li span {
+        font-weight: 700;
+    }
+
+}
+
+/* HANDPHONE */
+@media (min-width: 0px) and ( max-width: 450px){
+    html{font-size: 62.5%}
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .wrapper-title {
+        font-size: 3rem;
+    }
+
+    .navbar {
+        position: absolute;
+        /* top: 100%; --- mengatur navbar dibawah navigation */
+        top: 100%; /*untuk mengatur navbar keatas menghilang*/
+        right: -100%;
+        width: 60%;
+        height: 100vh;;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        transition: 0.4s;
+        z-index: -2;
+    }
+
+    .navbar.active {
+        right: 0;
+    }
+
+    .navbar-extra {
+        position: absolute;
+        right: 8%;
+        bottom: 1.5rem;
+    }
+
+    .navbar > a {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.7rem;
+        padding-top: 1rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .navbar > a::after{
+        transform-origin: 0 0;
+    }
+
+    .navbar > a:hover::after {
+        transform: scaleX(0.3);
+    }
+
+    .hero {
+        min-height: 1000px;
+    }
+
+    .hero-home {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo-home {
+        width: 80%;
+    }
+
+    .hero-picture > h2 {
+        font-size: 2.8rem;
+    }
+
+    .hero-title {
+        margin-left: 3rem;
+        margin-right: 3rem;
+        padding: 1.5rem;
+        padding-bottom: 5rem;
+        text-align: center;
+    }
+
+    .hero-title > h1 {
+        font-size: 3rem;
+    }
+
+    .hero-title > p {
+        font-size: 1.6rem;
+        margin-bottom: 5rem;
+    }
+
+    .cta-home {
+        font-size: 1.5rem;
+        padding: 1rem 3rem;
+    }
+
+    /* Row section */
+
+    .tentang-kami > h2 {
+        font-size: 2.8rem;
+    }
+
+    .about,
+    .about-2 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .about-me > h3 {
+        font-size: 1.6rem;
+        margin-top: 2rem;
+    }
+    
+    .about-me > h3 > span {
+        color: #292fd1;
+    }
+
+    .about-me > ul {
+        text-align: left;
+    }
+
+    .about-me > p {
+        font-size: 1.2rem;
+    }
+
+    .about-me > ul > li {
+        font-size: 1.2rem;
+    }
+
+    /* .brand-films { 
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .brand-films > img {
+        margin: 1rem;
+    } */
+
+    .brand-films {
+        display: none;
+    }
+
+    .about-img2 {
+        display: none;
+    }
+
+    .about-me2 > h3,
+    .service > h2 {
+        margin-bottom: 2rem;
+        font-size: 2.8rem;
+    }
+
+    .about-me2 > ul {
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+
+    .about-me2 > ul > li {
+        font-size: 1.2rem;
+    }
+
+    .about-me2 > p {
+        font-size: 1.2rem;
+    }
+
+    /* sevice product */
+    .service-image1 {
+        width: 95%;
+    }
+
+    .product-knowledge1 > h3 {
+        margin-top: 2rem;
+    }
+
+    .product p {
+        font-size: 1.2rem;
+    }
+
+    .product ul li {
+        font-size: 1.2rem;
+    }
+
+    .product ul li span {
+        font-weight: 700;
+    }
+
+    /* contact */
+
+    .contact > h2 {
+        margin-bottom: 3rem;
+    }
+
+    .contact > p {
+        margin-bottom: 3rem;
+        font-size: 1.2rem;
+    }
+    .contact-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .form {
+        margin-top: 2rem;
+        margin-left: 0;
+        margin-bottom: 12rem;
+    }
+
+    .btn:hover {
+        width: 50%;
+    }
+
+}
