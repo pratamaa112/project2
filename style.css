@@ -34,7 +34,6 @@ body {
     right: 0;
     background-color: var(--bg);
     z-index: 100;
-    border-bottom:2px solid #060ddc;
 }
 
 .wrapper::before {
